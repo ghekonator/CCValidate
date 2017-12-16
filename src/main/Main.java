@@ -9,7 +9,7 @@ package main;
 public class Main {
 
 	public static void main(String[] args) {
-		Card card1 = new Card("5485470063801766");
+		Card card1 = new Card("6011957185644783");
 		System.out.println(card1.getCardType());
 	
 	}

@@ -16,11 +16,16 @@ public class Card  {
 			passesLuhnCheck = luhnCheck.passesLuhn() ;
 			if(passesLuhnCheck) {
 			String first = cardNumber.substring(0, 1);
+			
 				switch (first) {
+	
 					case "4": cardType = "Visa";
 					break;
 					
 					case "5" : cardType = "Master card";
+					break;
+					
+					case "6" : cardType = "Discover";
 					break;
 					
 					default: cardType = "Unknown";
