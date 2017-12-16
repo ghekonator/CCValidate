@@ -1,16 +1,35 @@
+/**
+* Implentation of Luhn
+* @author  Alex Friend
+* @version 1.0 
+*/
+
 package main;
 
+/*
+ * Implementation of Luhn Algorithm
+ */
+
 public class Luhn {
+	
 	private static String cardNoString = ""; 
 	private static int[] doubledValue;
     private static boolean isLuhn;
     
+    /**
+     * Constructor
+     * @param cardNo This is the card number
+     */
     public Luhn(String cardNo) {
 		setCardNoString(cardNo);
 		doubledValue = new int[getCardNoString().length()/2];
         doubleCard();
     }
        
+    /**
+     * Double card updates the card number , multiplying every odd digit
+     * @return void
+     */
     private static void doubleCard() {		
 		String valuestodouble ="";
 		for(int i = getCardNoString().length()-1 ; i > 0  ; i-=2) {
@@ -22,6 +41,10 @@ public class Luhn {
 		addDigits();
 	}
 		
+    /**
+     * Add digits of doubled values from array
+     * @return void
+     */
     private static void addDigits() {
 		for(int i = 0 ; i < doubledValue.length ; i++ ) {
 			if(doubledValue[i] > 9) {
@@ -35,6 +58,10 @@ public class Luhn {
 		addValue();
 	}
 		
+    /**
+     * add value function will every other digit
+     * @return void
+     */
 	private static void addValue() {
 		int sum = 0;
 		for(int i = getCardNoString().length() ; i > 0  ; i-=2) {

@@ -38,12 +38,14 @@ public class Card  {
 	public String getCardType() {
 		return cardType;
 	}
-	public boolean passesLuhn() {
-		return passesLuhnCheck;
-	}
+
+
 	
-	public boolean correctFormat() {
-		return isCorrectFormat;
+	public boolean isValid() {
+		if(isCorrectFormat && passesLuhnCheck) {
+			return true;
+		}
+		return false;
 	}
 	
 	public static void main(String[] args) {
