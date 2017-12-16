@@ -28,6 +28,9 @@ public class Card  {
 				}
 			}
 		}
+		else {
+			cardNumber = "Not a recognised card number";
+		}
 	}
 	
 	
