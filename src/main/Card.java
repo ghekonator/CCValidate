@@ -18,14 +18,14 @@ public class Card  {
 			String first = cardNumber.substring(0, 1);
 			
 				switch (first) {
-	
-					case "4": cardType = "Visa";
+
+					case "4": cardType = "visa";
 					break;
 					
-					case "5" : cardType = "Master card";
+					case "5" : cardType = "mastercard";
 					break;
 					
-					case "6" : cardType = "Discover";
+					case "6" : cardType = "discover";
 					break;
 					
 					default: cardType = "Unknown";
