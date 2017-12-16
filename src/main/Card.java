@@ -5,6 +5,7 @@ public class Card  {
 	private String cardNumber;
 	private boolean isCorrectFormat;
 	private boolean passesLuhnCheck;
+	private String cardType = "Card not recognised";
 
 	public Card(String cardNo) {
 		cardNumber = cardNo;
@@ -13,6 +14,19 @@ public class Card  {
 		if(isCorrectFormat) {
 			Luhn luhnCheck = new Luhn(cardNo);		
 			passesLuhnCheck = luhnCheck.passesLuhn() ;
+			if(passesLuhnCheck) {
+			String first = cardNumber.substring(0, 1);
+				switch (first) {
+					case "4": cardType = "Visa";
+					break;
+					
+					case "5" : cardType = "Master card";
+					break;
+					
+					default: cardType = "Unknown";
+					break;
+				}
+			}
 		}
 	}
 	
@@ -21,6 +35,9 @@ public class Card  {
 		return cardNumber;
 	}
 	
+	public String getCardType() {
+		return cardType;
+	}
 	public boolean passesLuhn() {
 		return passesLuhnCheck;
 	}
