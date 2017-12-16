@@ -3,15 +3,17 @@ package main;
 public class Card  {
 	
 	private String cardNumber;
-	private boolean isCorrectLength;
+	private boolean isCorrectFormat;
 	private boolean passesLuhnCheck;
 
 	public Card(String cardNo) {
 		cardNumber = cardNo;
-		Luhn luhnCheck = new Luhn(cardNo);
 		CharacterCheck charCheck = new CharacterCheck(cardNo);
-		isCorrectLength = charCheck.correctLength();
-		passesLuhnCheck = luhnCheck.passesLuhn() ;
+		isCorrectFormat = charCheck.correctForm();
+		if(isCorrectFormat) {
+			Luhn luhnCheck = new Luhn(cardNo);		
+			passesLuhnCheck = luhnCheck.passesLuhn() ;
+		}
 	}
 	
 	
@@ -23,8 +25,8 @@ public class Card  {
 		return passesLuhnCheck;
 	}
 	
-	public boolean correctLength() {
-		return isCorrectLength;
+	public boolean correctFormat() {
+		return isCorrectFormat;
 	}
 	
 	public static void main(String[] args) {

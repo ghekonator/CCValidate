@@ -6,15 +6,15 @@ public class CharacterCheck {
 	private boolean correct;
 	public CharacterCheck(String cardNumber) {
 		cardNo = cardNumber;
-		isCorrectLength();
+		isCorrectFormat();
 	}
 	
-	private void isCorrectLength() {
-		if(cardNo.length() == 16) correct= true;
+	private void isCorrectFormat() {
+		if (cardNo.matches("[0-9]+") && cardNo.length() == 16) correct= true;
 		else correct= false;			
 	}
 	
-	public boolean correctLength(){
+	public boolean correctForm(){
 		return correct;
 	}
 	public static void main(String[] args) {
