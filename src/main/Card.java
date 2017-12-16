@@ -48,6 +48,13 @@ public class Card  {
 	}
 
 
+	public boolean passesLuhn() {
+		return passesLuhnCheck;
+	}
+	
+	public boolean correctFormat() {
+		return isCorrectFormat;
+	}
 	
 	public boolean isValid() {
 		if(isCorrectFormat && passesLuhnCheck) {
