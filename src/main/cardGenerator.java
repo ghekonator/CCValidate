@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public class cardGenerator {
+public class CardGenerator {
 
 	private static final String NUMERIC_STRING = "0123456789";
 	private static ArrayList<String> numbers = new ArrayList<String>();
@@ -16,7 +16,7 @@ public class cardGenerator {
 				builder.append(NUMERIC_STRING.charAt(character));
 			}
 			
-			Card test = new Card(builder.toString());
+			PaymentCard test = new PaymentCard(builder.toString());
 			if(test.isValid() == false || test.getCardType() != cardType) {
 				numCards ++;
 			}

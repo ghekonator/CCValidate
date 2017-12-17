@@ -9,11 +9,11 @@ package main;
 public class Main {
 
 	public static void main(String[] args) {
-		Card card1 = new Card("4436032137006663");
+		PaymentCard card1 = new PaymentCard("4436032137006663");
 		System.out.println(card1.getCardType());
 		
 		//Types visa , mastercard or discover
-		cardGenerator test = new cardGenerator(4,"visa");
+		CardGenerator test = new CardGenerator(4,"visa");
 		System.out.println(test.getCards());
 	}
 	

@@ -1,13 +1,13 @@
 package main;
 
-public class Card  {
+public class PaymentCard  {
 	
 	private String cardNumber;
 	private boolean isCorrectFormat;
 	private boolean passesLuhnCheck;
 	private String cardType = "Card not recognised";
 
-	public Card(String cardNo) {
+	public PaymentCard(String cardNo) {
 		cardNumber = cardNo;
 		CharacterCheck charCheck = new CharacterCheck(cardNo);
 		isCorrectFormat = charCheck.correctForm();
