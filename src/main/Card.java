@@ -5,30 +5,30 @@ public class Card  {
 	private String cardNumber;
 	private boolean isCorrectFormat;
 	private boolean passesLuhnCheck;
-	private String cardType = "Card not recognised";
+	private CardType cardType = CardType.UNKNOWN;
 
 	public Card(String cardNo) {
 		cardNumber = cardNo;
 		CharacterCheck charCheck = new CharacterCheck(cardNo);
 		isCorrectFormat = charCheck.correctForm();
 		if(isCorrectFormat) {
-			Luhn luhnCheck = new Luhn(cardNo);		
-			passesLuhnCheck = luhnCheck.passesLuhn() ;
+			Luhn.Init(cardNo);		
+			passesLuhnCheck = Luhn.passesLuhn();
 			if(passesLuhnCheck) {
 			String first = cardNumber.substring(0, 1);
 			
 				switch (first) {
 
-					case "4": cardType = "visa";
+					case "4": cardType = CardType.VISA;
 					break;
 					
-					case "5" : cardType = "mastercard";
+					case "5" : cardType = CardType.MASTERCARD;
 					break;
 					
-					case "6" : cardType = "discover";
+					case "6" : cardType = CardType.DISCOVER;
 					break;
 					
-					default: cardType = "Unknown";
+					default: cardType = CardType.UNKNOWN;
 					break;
 				}
 			}
@@ -43,7 +43,7 @@ public class Card  {
 		return cardNumber;
 	}
 	
-	public String getCardType() {
+	public CardType getCardType() {
 		return cardType;
 	}
 

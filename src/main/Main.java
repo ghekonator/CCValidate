@@ -13,7 +13,7 @@ public class Main {
 		System.out.println(card1.getCardType());
 		
 		//Types visa , mastercard or discover
-		cardGenerator test = new cardGenerator(4,"visa");
+		CardGenerator test = new CardGenerator(4,CardType.VISA);
 		System.out.println(test.getCards());
 	}
 	

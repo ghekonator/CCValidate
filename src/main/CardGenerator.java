@@ -2,12 +2,12 @@ package main;
 
 import java.util.ArrayList;
 
-public class cardGenerator {
+public class CardGenerator {
 
 	private static final String NUMERIC_STRING = "0123456789";
 	private static ArrayList<String> numbers = new ArrayList<String>();
 	
-	public cardGenerator(int numCards , String cardType) {
+	public CardGenerator(int numCards , CardType cardType) {
 		for(int i = 0 ; i< numCards ; i++) {
 			StringBuilder builder = new StringBuilder();
 			int count = 16;
@@ -33,9 +33,4 @@ public class cardGenerator {
 		}
 		return list;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
