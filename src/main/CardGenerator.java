@@ -7,7 +7,7 @@ public class CardGenerator {
 	private static final String NUMERIC_STRING = "0123456789";
 	private static ArrayList<String> numbers = new ArrayList<String>();
 	
-	public cardGenerator(int numCards , String cardType) {
+	public CardGenerator(int numCards , String cardType) {
 		for(int i = 0 ; i< numCards ; i++) {
 			StringBuilder builder = new StringBuilder();
 			int count = 16;
