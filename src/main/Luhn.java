@@ -17,10 +17,14 @@ public class Luhn {
     private static boolean isLuhn;
     
     /**
+     * Private constructor - Enforces singleton
+     */
+    private Luhn() {};
+    /**
      * Constructor
      * @param cardNo This is the card number
      */
-    public Luhn(String cardNo) {
+    public static void Init(String cardNo) {
 		setCardNoString(cardNo);
 		doubledValue = new int[getCardNoString().length()/2];
         doubleCard();
@@ -78,7 +82,7 @@ public class Luhn {
 		else isLuhn = false;
 	}
 	
-	public boolean passesLuhn() {
+	public static boolean passesLuhn() {
 		return isLuhn;
 	}
 

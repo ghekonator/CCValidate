@@ -12,8 +12,8 @@ public class PaymentCard  {
 		CharacterCheck charCheck = new CharacterCheck(cardNo);
 		isCorrectFormat = charCheck.correctForm();
 		if(isCorrectFormat) {
-			Luhn luhnCheck = new Luhn(cardNo);		
-			passesLuhnCheck = luhnCheck.passesLuhn() ;
+			Luhn.Init(cardNo);
+			passesLuhnCheck = Luhn.passesLuhn() ;
 			if(passesLuhnCheck) {
 			String first = cardNumber.substring(0, 1);
 			

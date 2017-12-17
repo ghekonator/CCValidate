@@ -29,9 +29,4 @@ public class CharacterCheck {
 	public boolean correctForm(){
 		return correct;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
